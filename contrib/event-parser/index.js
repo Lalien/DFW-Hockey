@@ -3,6 +3,7 @@ const Entities = require('html-entities').XmlEntities;
 const entities = new Entities();
 
 module.exports = function(html) {
+	tooltips 	  = $('.wrToolTipValue', html);
 	// Set the title
 	this.title    = entities.decode($('.wrToolTipHeader',html).html());
 	// Set the time
@@ -10,5 +11,5 @@ module.exports = function(html) {
 	// Set the date
 	this.date     = "";
 	// Set the location
-	this.location = "";
+	this.location = tooltips.html();
 }
