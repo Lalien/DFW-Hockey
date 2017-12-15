@@ -9,17 +9,18 @@ JSDOM.fromURL("http://dallasstars.maxgalaxy.net/Schedule.aspx?ID=11", {}).then(d
 	occurences = $('.rsApt ', html);
 	Object.keys(occurences).forEach(function(element, key) {
 		if (!isNaN(element)) {
-			occurence      = occurences[key];
-			inner_html     = occurence.attribs.title;
-			eventData 	   = new eventParser(inner_html);
-			event 	       = new Event();
-			event.title    = eventData.title;
-			event.date     = eventData.data;
-			event.time     = eventData.time;
-			event.location = eventData.location;
+			inner_html       = occurences[key].attribs.title;
+			eventData 	     = new eventParser(inner_html);
+			event 	         = new Event();
+			event.title      = eventData.title;
+			event.date       = eventData.data;
+			event.start_time = eventData.start_time;
+			event.end_time   = eventData.end_time;
+			event.date       = eventData.date;
+			event.location   = eventData.location;
+			console.log(eventData);
 			event.save(function(err) {
-				if (err) console.log(err);
-				console.log("Added to DB!");
+				if (err) return console.log(err);
 			});
 		}
 	});
