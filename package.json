@@ -7,19 +7,20 @@
   },
   "dependencies": {
     "body-parser": "~1.18.2",
+    "cheerio": "^1.0.0-rc.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
     "jade": "~1.11.0",
-    "morgan": "~1.9.0",
-    "serve-favicon": "~2.4.5",
-    "cheerio": "^1.0.0-rc.2",
     "jsdom": "11.5.1",
     "mocha": "^4.0.1",
+    "mongodb": "^3.0.0-rc0",
     "mongoose": "^4.13.7",
+    "morgan": "~1.9.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17",
+    "serve-favicon": "~2.4.5",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
   }
