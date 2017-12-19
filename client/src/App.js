@@ -5,7 +5,11 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
-    fetch('/users').then(res => console.log(res.json()));
+    // Setting the events in the state.
+    this.getEvents()
+    .then(data => data.json())
+    .then(events => this.setState({events: events}))
+    .catch(error => console.error(error));
   }
   render() {
     return (
@@ -14,12 +18,32 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }
+  getEvents() {
+    return new Promise(function(resolve, reject) {
+      fetch('/users')
+      .then(data => resolve(data))
+      .catch(err => reject("Error!"));
+    } );
+  }
+}
+
+class Calendar {
+  render() {
+    return (
+      <h1>Hello</h1>
+    );
+  }
+}
+
+function Day(props) {
+  return <h3>{props.title}</h3>;
+}
+
+function Event(props) {
+
 }
 
 export default App;
