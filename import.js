@@ -16,7 +16,6 @@ JSDOM.fromURL("http://dallasstars.maxgalaxy.net/Schedule.aspx?ID=11", {}).then(d
 			event.date       = eventData.data;
 			event.start_time = eventData.start_time;
 			event.end_time   = eventData.end_time;
-			event.date       = eventData.date;
 			event.location   = eventData.location;
 			event.save(function(err) {
 				if (err) return console.log(err);

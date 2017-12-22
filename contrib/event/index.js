@@ -10,6 +10,6 @@ var Event 	   = new Schema({
 					start_time: String,
 					end_time: String,
 					date: String
-				}, {collection: 'Event'});
+				}, {collection: 'events'});
 
 module.exports  = connection.model('Event', Event, 'events');
